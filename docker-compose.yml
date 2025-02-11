@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+    image: minghermawan/pemilu-ppwp-2024:pre-alpha
+    container_name: pemilu-ppwp-2024
+    hostname: pemilu-ppwp-2024
+    network_mode: host
+    environment:
+      - DB=sqlite
+      - DB_FILENAME=pemilu-ppwp-2024.db
+      - DEBUG=NO
+      - SAVE_JSON_FILES=YES
+      - SAVE_IMAGE_FILES=NO
+    volumes:
+      - ./out:/opt/pemilu-ppwp-2024/out
